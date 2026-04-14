@@ -32,3 +32,13 @@
  * npx ts-node archivo.ts
  * 
  */
+
+
+/**
+ * CONCLUCIONES
+ * podemos tipas, objetos, interfaces lo que nos brinda una forma de trabajo adecuado para un problema
+ * codigo en javascript es valido para typescript
+ * 
+ * DOCUMENTACION
+ *  https://www.typescriptlang.org/docs/
+ */

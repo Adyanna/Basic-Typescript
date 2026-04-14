@@ -89,3 +89,15 @@ console.log(operacion(4,5,suma));
 console.log(operacion(5,7,(x:number,y:number)=>{return y*x}));
 
 
+//GENERICOS
+
+function identidad<Type>(objeto:Type):Type {
+    return objeto;
+}
+
+let v1 = identidad("hola");
+console.log(v1);
+
+let v2 = identidad<number>(10238);
+console.log(v2);
+

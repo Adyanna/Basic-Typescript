@@ -24,6 +24,24 @@ let mygato = new gato('Chavelo', 12, Especie.meztizo);
 mygato.showgato();
 
 
+//CLASES GENERICAS
+
+class  numeroGenerico<Numtype>{
+    valor:Numtype;
+    agregar:(x:Numtype,y:Numtype)=>Numtype;
+    constructor(v:Numtype,agregar_:(x:Numtype,y:Numtype)=>Numtype){
+        this.valor=v;
+        this.agregar=agregar_;
+    }
+}
+
+let resultado_gen = new numeroGenerico<number>(3,function(x,y){return x+y;});
+console.log('RESULTADO ANONIMO',resultado_gen.agregar(4,5));
+
+let resultado_str = new numeroGenerico<string>("",function(x,y){return x+y;});
+resultado_str.valor='primero';
+console.log('RESULTADO ANONIMO string',resultado_str.agregar(resultado_str.valor,' segundo'));
+
 //INTERFACES  //herencia de parametros y funciones que debe tener una clase
 // contrato que dice qué propiedades y tipos debe tener algo
 //Una interfaz define cómo debe ser un objeto, obligando a cumplir una estructura.
@@ -122,9 +140,9 @@ class calculos {
 let fibo = new calculos(12);
 let pares = new calculos(50);
 
-let opcion = 3;
+let opcion_ = 3;
 
-switch (opcion) {
+switch (opcion_) {
     case 1:
         console.log(fibo.fibonaci());
         break;
@@ -138,6 +156,7 @@ switch (opcion) {
         console.log('Valor no valido.');
         break;
 }
+
 
 
 //-------------------- PALABRA RESERVADA THIS------------------------------------

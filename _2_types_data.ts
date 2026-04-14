@@ -17,16 +17,30 @@ console.log(numero);
 let nombre: string = "nombre tipo string";
 let numero_: number = 123;
 
+//CONVERSION DE TIPOS 
+
+var cadenaTexto: string = '1000';
+var numero_1: number = 8;
+
+console.log(typeof (cadenaTexto))
+
+numero_1 = cadenaTexto as any as number;
+console.log(numero_1);
+numero_1 = <number><any>cadenaTexto;
+
+let textbox = document.querySelector('input[type="text"]') as HTMLInputElement;
+console.log(textbox.value);
+
 
 //------------------OBJETOS -------------------
 // DECLARACION
 let casa = {
     calle: "Calle",
     numero: 13,
-    portero : false,
-    familia:{
-        padre:'Juan',
-        hijo:'Pedro'
+    portero: false,
+    familia: {
+        padre: 'Juan',
+        hijo: 'Pedro'
     }
 }
 
@@ -35,30 +49,30 @@ console.log(casa.numero);
 
 //ASIGNACION DE VARIABLES
 
-casa.calle='Las flores';
+casa.calle = 'Las flores';
 // casa.piso= '4to piso'; NO SE PUEDE ANIADIR UN PARAMETRO NO ASIGANDO EN LA CREACION
 console.log(casa);
 
 // OTRA FORMA DE ANIADIR VALOR
 let casa2:
+    {
+        calle: string,
+        numero: number,
+        portero: boolean,
+        familia:
+        {
+            padre: string,
+            hijo: string
+        }
+    } =
 {
-    calle:string,
-    numero:number,
-    portero:boolean,
+    calle: "Calle melaconlia 2",
+    numero: 45,
+    portero: true,
     familia:
     {
-        padre:string,
-        hijo:string
-    }
-}=
-{
-    calle:"Calle melaconlia 2",
-    numero:45,
-    portero:true,
-    familia:
-    {        
-        padre:"Juan",
-        hijo:"Pepe"
+        padre: "Juan",
+        hijo: "Pepe"
 
     }
 
@@ -67,25 +81,25 @@ let casa2:
 
 //---------------------- ARRAYS
 // DECLARACION
-let string_:string[];
-let number_:number[];
+let string_: string[];
+let number_: number[];
 let cualqueira: any[];
 
 //ASIGNACION DE VALORES
-string_=['Ana','Pedro','Rafa'];
-number_= [1,2,3,4];
-cualqueira = ['Selena',3,4,5,'Sonia',null]
+string_ = ['Ana', 'Pedro', 'Rafa'];
+number_ = [1, 2, 3, 4];
+cualqueira = ['Selena', 3, 4, 5, 'Sonia', null]
 
 // ARRAY EN OBJETOS
 
-let datos={
-    nombre:'Jhon',
-    apellido:"Salva",
-    direccion:['La Paz','Achachicala','Las Flores',345]
+let datos = {
+    nombre: 'Jhon',
+    apellido: "Salva",
+    direccion: ['La Paz', 'Achachicala', 'Las Flores', 345]
 };
 
 //ARRAY EN ARRAY
-let objet_array =[string_,number_]
+let objet_array = [string_, number_]
 
 
 //---------------------TUPLAS
@@ -93,27 +107,27 @@ let objet_array =[string_,number_]
 // parecen array si no especificamos el tipo de datos
 
 //DECLARACION DE DATOS
-let silla:[string,string,string];
-type datos=[string,number,string];
+let silla: [string, string, string];
+type datos = [string, number, string];
 
 // ASIGNACION DE DATOS
-let silla2:datos=['stirng',3,'prueba'];
-let silla3:["dato","dato",2];
+let silla2: datos = ['stirng', 3, 'prueba'];
+let silla3: ["dato", "dato", 2];
 
 //----------------------ENUM
 //conjunto de valores definidos y limitados para una variable.
 //existen en typescript, pero no en js
 
 //DECLARACION DE VARIABLE
-enum monedas{euro,dolar,yen};
-enum animal{anfibio,reptil,ave,pez,mamifero}
+enum monedas { euro, dolar, yen };
+enum animal2 { anfibio, reptil, ave, pez, mamifero };
 
 //ASIGNACION DE VALOR
-let gato =
+let gato_2 =
 {
-    especie:"Comun",
-    edad:7,
-    animal:animal.mamifero //valor 4
+    especie: "Comun",
+    edad: 7,
+    animal: animal2.mamifero //valor 4
 }
 
 
@@ -139,17 +153,17 @@ let gato =
 
 //ANY - una variable de tipo any puede contener datos de cualquier tipo, en cualquier momento.
 //Si nos queremos saltar el tipado
-let variasCosas: any[]=['Gato',3,-4.56,true,null,undefined]
+let variasCosas: any[] = ['Gato', 3, -4.56, true, null, undefined]
 
 //UNION - similar al tipo any pero mas acotado(acepta cierto tipos definidos)
-let numeroBol: number|boolean;
-numeroBol=4;
-numeroBol=true;
+let numeroBol: number | boolean;
+numeroBol = 4;
+numeroBol = true;
 
-let mescla: [number|boolean];
+let mescla: [number | boolean];
 mescla = [true];
 
 //LITERAL - definimos el valor, sin poder cambiar ya que lo toma como tipo de dato.
 
-let animalp:'gato';
+let animalp: 'gato';
 //animalp='perro'// no funciona
